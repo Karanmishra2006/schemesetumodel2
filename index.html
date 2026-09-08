@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SchemeSetu</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;1,8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+<!-- Custom base styles (inline) -->
+<style>
+/* SchemeSetu - Custom base styles */
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+</style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind theme config (inline) -->
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        outline: "#74777e",
+        "surface-bright": "#fbf9f3",
+        "on-secondary-fixed": "#001d33",
+        "on-primary-container": "#809abd",
+        "surface-container-highest": "#e4e2dd",
+        "surface-container-lowest": "#ffffff",
+        "secondary-fixed-dim": "#adc9ea",
+        "on-primary-fixed-variant": "#2e4867",
+        background: "#fbf9f3",
+        error: "#ba1a1a",
+        "on-tertiary": "#ffffff",
+        "surface-container-low": "#f5f3ed",
+        "surface-tint": "#466080",
+        "surface-container-high": "#eae8e2",
+        "on-primary-fixed": "#001d37",
+        "inverse-primary": "#aec9ed",
+        "on-tertiary-fixed-variant": "#8e130c",
+        secondary: "#45617d",
+        "error-container": "#ffdad6",
+        "on-secondary-fixed-variant": "#2d4964",
+        "inverse-surface": "#30312d",
+        "on-error": "#ffffff",
+        "surface-container": "#f0eee8",
+        "secondary-container": "#c0ddfe",
+        "on-tertiary-fixed": "#410000",
+        "outline-variant": "#c3c6ce",
+        "surface-variant": "#e4e2dd",
+        "on-surface": "#1b1c18",
+        "on-primary": "#ffffff",
+        "tertiary-container": "#690001",
+        "tertiary-fixed-dim": "#ffb4a9",
+        "secondary-fixed": "#cfe5ff",
+        "on-error-container": "#93000a",
+        "primary-container": "#16324f",
+        "tertiary-fixed": "#ffdad5",
+        primary: "#001d37",
+        "on-surface-variant": "#43474d",
+        "primary-fixed": "#d2e4ff",
+        "on-tertiary-container": "#ff6754",
+        "on-background": "#1b1c18",
+        "on-secondary": "#ffffff",
+        "surface-dim": "#dcdad4",
+        "primary-fixed-dim": "#aec9ed",
+        "on-secondary-container": "#46617e",
+        "inverse-on-surface": "#f3f1eb",
+        surface: "#fbf9f3",
+        tertiary: "#410000",
+      },
+      borderRadius: {
+        DEFAULT: "0.125rem",
+        lg: "0.25rem",
+        xl: "0.5rem",
+        full: "0.75rem",
+      },
+      spacing: {
+        "margin-mobile": "1rem",
+        "margin-desktop": "2.5rem",
+        "space-xl": "2rem",
+        "space-sm": "0.75rem",
+        "space-xs": "0.5rem",
+        "space-lg": "1.5rem",
+        "space-2xl": "3rem",
+        "space-md": "1rem",
+        "space-3xl": "4rem",
+        "max-content-width": "75rem",
+        gutter: "1.5rem",
+        "space-2xs": "0.25rem",
+      },
+      fontFamily: {
+        "display-lg-mobile": ['"Source Serif 4"'],
+        "display-lg": ['"Source Serif 4"'],
+        "title-md": ["Public Sans"],
+        "body-sm": ["Public Sans"],
+        "body-md": ["Public Sans"],
+        "label-sm": ["Public Sans"],
+        "body-lg": ["Public Sans"],
+        "title-lg": ["Public Sans"],
+        "headline-sm": ['"Source Serif 4"'],
+        "headline-lg-mobile": ['"Source Serif 4"'],
+        "headline-md": ['"Source Serif 4"'],
+        "headline-lg": ['"Source Serif 4"'],
+        "label-md": ["Public Sans"],
+      },
+      fontSize: {
+        "display-lg-mobile": [
+          "34px",
+          { lineHeight: "42px", letterSpacing: "-0.015em", fontWeight: "600" },
+        ],
+        "display-lg": [
+          "48px",
+          { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "600" },
+        ],
+        "title-md": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+        "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+        "body-md": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+        "label-sm": [
+          "11px",
+          { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" },
+        ],
+        "body-lg": ["17px", { lineHeight: "26px", fontWeight: "400" }],
+        "title-lg": ["18px", { lineHeight: "26px", fontWeight: "600" }],
+        "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+        "headline-lg-mobile": [
+          "26px",
+          { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "600" },
+        ],
+        "headline-md": [
+          "24px",
+          { lineHeight: "32px", letterSpacing: "-0.005em", fontWeight: "600" },
+        ],
+        "headline-lg": [
+          "32px",
+          { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" },
+        ],
+        "label-md": [
+          "13px",
+          { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "600" },
+        ],
+      },
+    },
+  },
+};
+
+</script>
+</head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen">
+<header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="h-20 max-w-max-content-width mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between">
+<div class="flex items-center gap-space-lg">
+<a class="flex items-center gap-space-xs" data-path="home" href="#">
+<img alt="SchemeSetu Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V_pPDdXy4DFdD7qebpkeks78UwkHFESm5CiPIoDQJ-XVXLxrOdbxqZUT_kG69ZbWkiX-QEeZ1IPcZTaw-ZufVQvpsaofEAL_Z-OfADrur0mVVm7EJ1_MgiA9CA3g8DyZ2HbaNj4LLejk4vcmTZNCBMBl6ww4F16mzWVQv7UP_OdUa74fbXWN0tN-QnWX5hxHXs1Vd9P0__ZDX_9HwJSgCLZmelIJHH-ysq-oqcj8rA7o15ZrTnSJiS9AE">
+<div class="flex items-baseline font-headline-md text-headline-md tracking-tight">
+<span class="text-primary-container">Scheme</span><span class="text-tertiary-container">Setu</span>
+</div>
+</a>
+</div>
+<nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-bold">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-[#C0392B] transition-colors duration-200" data-path="how-it-works" href="#">How it Works</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-[#C0392B] transition-colors duration-200" data-path="scheme-repository" href="#">Scheme Repository</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-[#C0392B] transition-colors duration-200" data-path="transparency-and-rules" href="#">Transparency &amp; Rules</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-[#C0392B] transition-colors duration-200" data-path="about" href="#">About</a>
+</nav>
+<div class="flex items-center gap-space-md">
+<div class="hidden sm:flex items-center px-space-xs py-space-2xs rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm tracking-wider uppercase">
+<span class="font-bold text-on-surface">EN</span><span class="mx-1 text-outline-variant">/</span><span class="hover:text-[#C0392B] transition-colors duration-200 cursor-pointer">हिंदी</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+<div class="flex flex-col w-full">
+<!-- Top Hero Section -->
+<section class="w-full max-w-max-content-width mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl lg:py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl lg:gap-gutter items-center">
+<!-- Left Column: Value Proposition & Call to Action -->
+<div class="lg:col-span-6 flex flex-col justify-center space-y-space-md">
+<!-- Civic Tag / Micro Badge -->
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-high w-fit">
+<div class="flex items-center gap-1.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#2F6B4F]"></span>
+</span>
+<span class="font-label-sm text-label-sm text-[#2F6B4F] tracking-wider uppercase font-bold">Deterministic Engine Active</span>
+</div>
+<span class="text-outline-variant text-[12px]">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">National Framework · SIH Prototype</span>
+</div>
+<!-- Main Headline -->
+<div class="space-y-space-2xs">
+<h1 class="font-headline-lg lg:font-display-lg text-headline-lg lg:text-display-lg text-primary tracking-tight font-semibold leading-tight">Find the Right Schemes.<br><span class="text-[#C0392B] font-display-lg italic">Check Your Eligibility.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl pt-space-xs leading-relaxed">SchemeSetu helps users discover relevant government schemes and check their eligibility based on their personal and business details.</p>
+</div>
+<!-- Call to Action & Micro-trust -->
+<div class="space-y-space-xs pt-space-2xs">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary font-title-md text-title-md shadow-sm hover:shadow-md hover:bg-[#10243a] transition-all transform active:scale-[0.99] group" data-path="check-eligibility" href="#">
+<span>Start Eligibility Check</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center px-space-md py-space-sm rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" data-path="how-it-works" href="#">
+              Read Verification Audit
+            </a>
+</div>
+<!-- Trust Indicators -->
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-2xs">
+<span class="material-symbols-outlined text-[18px] text-[#2F6B4F]">check_circle</span>
+<span class="font-medium text-on-surface">No login required</span>
+<span class="text-outline-variant">•</span>
+<span>Evaluation takes under 2 minutes</span>
+</div>
+</div>
+<!-- Live Platform Stats Strip -->
+<div class="pt-space-xs">
+<div class="grid grid-cols-3 gap-space-xs p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">850+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Central &amp; State Schemes</span>
+</div>
+<div class="flex flex-col pl-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Deterministic Rules</span>
+</div>
+<div class="flex flex-col pl-space-xs">
+<span class="font-headline-sm text-headline-sm text-[#2F6B4F] font-semibold">Zero</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Data Stored</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Architecture Flow -->
+<div class="lg:col-span-6 relative flex flex-col items-center">
+<!-- Visual Architecture Pipeline Cards -->
+<div class="w-full space-y-space-xs relative">
+<!-- Card 01: Profile Ingestion -->
+<div class="w-full rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-secondary font-bold tracking-wider uppercase">01 / Profile Input</span>
+<span class="font-title-md text-title-md text-primary font-semibold">Basic Details &amp; Business Profile</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">badge</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-2xs pt-space-xs">
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Business Type</span><span class="font-title-md text-title-md text-primary truncate">MSME / Agro</span></div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">State / Location</span><span class="font-title-md text-title-md text-primary truncate">Maharashtra</span></div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Annual Turnover</span><span class="font-title-md text-title-md text-primary truncate">₹12.00 Lakhs</span></div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Applicant Category</span><span class="font-title-md text-title-md text-[#2F6B4F] truncate font-medium">Woman Entr.</span></div>
+</div>
+</div>
+<!-- Connector 1 -->
+<div class="flex justify-center -my-space-2xs relative z-10">
+<div class="h-6 w-0.5 bg-secondary/30 flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-bright text-[10px]">south</span>
+</div>
+</div>
+</div>
+<!-- Card 02: Deterministic Rule Engine Verification -->
+<div class="w-full rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-secondary font-bold tracking-wider uppercase">02 / Logic Engine</span>
+<span class="font-title-md text-title-md text-primary font-semibold">42 Statutory Parameter Check</span>
+</div>
+<span class="material-symbols-outlined text-[#2F6B4F] text-[20px]">fact_check</span>
+</div>
+<div class="space-y-space-2xs pt-space-2xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm p-space-2xs rounded bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[#2F6B4F] text-[16px]">check_circle</span>
+<span class="text-on-surface">Turnover Cap Verification (&lt; ₹50L Gazetted Ceil)</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#2F6B4F] font-semibold uppercase tracking-wider">PASS</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm p-space-2xs rounded bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[#2F6B4F] text-[16px]">check_circle</span>
+<span class="text-on-surface">Regional Quota: Tier-3 Rural/Semi-Urban</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#2F6B4F] font-semibold uppercase tracking-wider">PASS</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm p-space-2xs rounded bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[#2F6B4F] text-[16px]">check_circle</span>
+<span class="text-on-surface">Priority Lending Vector: Special Category Subsidy</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#2F6B4F] font-semibold uppercase tracking-wider">PASS</span>
+</div>
+</div>
+</div>
+<!-- Connector 2 -->
+<div class="flex justify-center -my-space-2xs relative z-10">
+<div class="h-6 w-0.5 bg-secondary/30 flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-[#C0392B] flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-bright text-[10px]">south</span>
+</div>
+</div>
+</div>
+<!-- Card 03: Scheme Matches & Transparent Rationale -->
+<div class="w-full rounded-xl bg-surface-container-lowest p-space-md shadow-md border border-[#C0392B]/30">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-error-container text-[#C0392B] font-bold tracking-wider uppercase">03 / Verified Match Found</span>
+<h2 class="font-title-lg text-title-lg text-primary font-semibold mt-1">PMEGP — Prime Minister Employment Generation</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ministry of Micro, Small &amp; Medium Enterprises</span>
+</div>
+<span class="inline-flex items-center px-space-xs py-1 rounded bg-error-container text-[#C0392B] font-label-sm text-label-sm font-bold tracking-wider uppercase">
+                95% Fit Rating
+              </span>
+</div>
+<!-- Transparent Reasoning Box -->
+<div class="mt-space-sm p-space-sm rounded bg-surface-container-low space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-error-container text-[#C0392B] font-bold tracking-wider uppercase">03 / Verified Match Found</span>
+<span class="font-title-md text-title-md text-primary font-semibold">Statutory Justification</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Eligible under <strong class="text-on-surface">PMEGP Clause 4.2</strong> for 25% Capital Subsidy for non-farm rural enterprises, plus an additional 10% affirmative allowance for Women Entrepreneurs.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Section: How SchemeSetu Works in Three Precise Steps -->
+<section class="w-full bg-surface-container-low py-space-2xl">
+<div class="max-w-max-content-width mx-auto px-margin-mobile lg:px-margin-desktop space-y-space-lg">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div class="space-y-space-2xs max-w-xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold">Rigorous Methodology</span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">Check Your Eligibility with Confidence</h2>
+</div>
+</div>
+<!-- 3 Structured Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Step 01 Card -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-display-lg text-display-lg text-[#3E5A76] font-serif font-bold leading-none">01</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">input</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold">Enter Your Details</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Add your basic business, financial, and demographic information.</p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low p-space-sm rounded">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+              Structured form capture covers enterprise revenue, occupation, location, and social category in under 90 seconds without requiring identity documentation upfront.
+            </p>
+</div>
+</div>
+<!-- Step 02 Card -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-display-lg text-display-lg text-[#C0392B] font-serif font-bold leading-none">02</span>
+<span class="material-symbols-outlined text-[#C0392B] text-[24px]">rule</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold">Check Eligibility</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">The system verifies your details against the required eligibility criteria.</p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low p-space-sm rounded">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+              Strict mathematical parsing compares applicant attributes directly against gazetted departmental eligibility matrices, completely avoiding predictive AI hallucinations.
+            </p>
+</div>
+</div>
+<!-- Step 03 Card -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-display-lg text-display-lg text-[#2F6B4F] font-serif font-bold leading-none">03</span>
+<span class="material-symbols-outlined text-[#2F6B4F] text-[24px]">gavel</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold">View Matching Schemes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Explore relevant government schemes along with clear reasons for your eligibility.</p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low p-space-sm rounded">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+              Every qualified benefit comes with an annotated clause audit, precise subsidy breakdown, prerequisite document checklist, and verified nodal department portals.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Credibility & Partner Ministries Ticker -->
+<section class="w-full bg-surface py-space-xl">
+<div class="max-w-max-content-width mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs shrink-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold uppercase tracking-wider">
+            Covered Ministries &amp; Central Registries
+          </span>
+</div>
+<div class="flex flex-wrap items-center justify-center md:justify-end gap-x-space-sm gap-y-space-xs text-on-surface-variant font-label-md text-[12px] leading-relaxed">
+<span class="hover:text-primary transition-colors cursor-default">Ministry of Micro, Small &amp; Medium Enterprises</span><span class="text-outline-variant">•</span>
+<span class="hover:text-primary transition-colors cursor-default">Ministry of Agriculture &amp; Farmers Welfare</span><span class="text-outline-variant">•</span>
+<span class="hover:text-primary transition-colors cursor-default">Ministry of Finance</span><span class="text-outline-variant">•</span>
+<span class="hover:text-primary transition-colors cursor-default">Ministry of Social Justice &amp; Empowerment</span><span class="text-outline-variant">•</span>
+<span class="hover:text-primary transition-colors cursor-default">Ministry of Women &amp; Child Development</span><span class="text-outline-variant">•</span>
+<span class="hover:text-primary transition-colors cursor-default">Ministry of Rural Development</span><span class="text-outline-variant">•</span>
+<span class="hover:text-primary transition-colors cursor-default">Ministry of Skill Development &amp; Entrepreneurship</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="w-full bg-surface-container-low mt-space-xl py-space-xl border-t border-outline-variant/30">
+<div class="max-w-max-content-width mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-space-xl">
+<div class="md:col-span-5 space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<img alt="SchemeSetu Logo" class="w-7 h-7 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V_pPDdXy4DFdD7qebpkeks78UwkHFESm5CiPIoDQJ-XVXLxrOdbxqZUT_kG69ZbWkiX-QEeZ1IPcZTaw-ZufVQvpsaofEAL_Z-OfADrur0mVVm7EJ1_MgiA9CA3g8DyZ2HbaNj4LLejk4vcmTZNCBMBl6ww4F16mzWVQv7UP_OdUa74fbXWN0tN-QnWX5hxHXs1Vd9P0__ZDX_9HwJSgCLZmelIJHH-ysq-oqcj8rA7o15ZrTnSJiS9AE">
+<span class="font-headline-sm text-headline-sm tracking-tight text-primary-container">Scheme<span class="text-tertiary-container">Setu</span></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">SchemeSetu helps users discover relevant government schemes and check their eligibility based on their personal and business details.</p>
+<div class="pt-space-xs"></div>
+</div>
+<div class="md:col-span-3 space-y-space-xs">
+<div class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Institutional Linkages</div>
+<ul class="space-y-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" data-path="scheme-repository" href="#">myScheme Portal</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="scheme-repository" href="#">Direct Benefit Transfer (DBT) Bharat</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="scheme-repository" href="#">India.gov.in National Portal</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="scheme-repository" href="#">Relevant Government Scheme Portals</a></li>
+</ul>
+</div>
+<div class="md:col-span-4 space-y-space-xs">
+<div class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Constitutional Governance</div>
+<ul class="space-y-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" data-path="transparency-and-rules" href="#">Rule-Based Eligibility Verification</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="transparency-and-rules" href="#">Data Privacy &amp; Citizen Consent</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="transparency-and-rules" href="#">Transparent &amp; Explainable Decisions</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="about" href="#">Accessibility &amp; Inclusive Access</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="about" href="#">Grievance Redressal Support</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-space-md border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left"></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2025 SchemeSetu Public Digital Infrastructure.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
